@@ -112,8 +112,8 @@ def get_ros2_nodes(*args):
         robot_driver,
         footprint_publisher,
         imu_publisher,
-        # topic_remapper,
-        # reset_distance,
+        topic_remapper,
+        reset_distance,
     ]
 
 

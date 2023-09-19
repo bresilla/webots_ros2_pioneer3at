@@ -6,7 +6,6 @@ from nav_msgs.msg import Odometry
 from example_interfaces.srv import Trigger
 from handy_msgs.msg import Float32Stamped
 
-
 def distance(coord1, coord2):
     radius_earth = 6_367_449
     lat1, lon1 = map(math.radians, coord1)
