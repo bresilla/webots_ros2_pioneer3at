@@ -1,0 +1,84 @@
+#VRML_SIM R2023b utf8
+
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/backgrounds/protos/TexturedBackground.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/backgrounds/protos/TexturedBackgroundLight.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/floors/protos/RectangleArena.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/appearances/protos/SandyGround.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/robots/adept/pioneer3/protos/Pioneer3at.proto"
+
+WorldInfo {
+  info [
+    "Pioneer 3AT robot (Adept MobileRobots)."
+  ]
+  title "Pioneer 3AT"
+  gpsCoordinateSystem "WGS84"
+  gpsReference 51.9877 5.66295 0
+  lineScale 0.5
+}
+Viewpoint {
+  orientation -0.038173965783754406 -0.9987487496690698 0.032306088757542 5.808214666989932
+  position -6.8339621249033105 0.2938284142185567 4.475673110555941
+  followSmoothness 0
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+}
+RectangleArena {
+  floorSize 60 60
+  floorTileSize 3 3
+  floorAppearance SandyGround {
+    colorOverride 0.792157 0.792157 0.552941
+  }
+  wallThickness 0.2
+  wallHeight 0.8
+  wallAppearance PBRAppearance {
+    baseColorMap ImageTexture {
+      url [
+        "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/default/worlds/textures/gray_brick_wall.jpg"
+      ]
+    }
+    roughness 1
+    metalness 0
+    textureTransform TextureTransform {
+      scale 56 28
+    }
+  }
+}
+Pioneer3at {
+  name "Pioneer3at"
+  controller "<extern>"
+  supervisor TRUE
+  extensionSlot [
+    Compass {
+    }
+    Camera {
+      translation 0.115 0 0.735071
+      rotation 0 -1 0 -1.0472053071795866
+      name "camera_front"
+      width 1280
+      height 720
+    }
+    Camera {
+      translation -0.175 3.99604e-07 0.735067
+      rotation 0.5000001748437495 -6.072562123498319e-07 -0.8660253028381163 -3.1415853071795863
+      name "camera_back"
+      width 1280
+      height 720
+    }
+    InertialUnit {
+      translation 0 0 0.3
+      name "imu"
+    }
+    Gyro {
+    }
+    Accelerometer {
+    }
+    Lidar {
+      translation 0 0 0.3
+    }
+    GPS {
+      translation 0 0 0.3
+    }
+  ]
+}

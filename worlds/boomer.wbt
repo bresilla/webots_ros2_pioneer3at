@@ -1,0 +1,113 @@
+#VRML_SIM R2023a utf8
+
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/backgrounds/protos/TexturedBackground.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/backgrounds/protos/TexturedBackgroundLight.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/vehicles/protos/generic/Tractor.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/devices/sick/protos/SickLms291.proto"
+
+WorldInfo {
+  info [
+    "Boomer 3050 Tractor"
+  ]
+  title "Boomer 3050 Tractor"
+  ERP 0.7
+  basicTimeStep 20
+  gpsCoordinateSystem "WGS84"
+  lineScale 1
+  contactProperties [
+    ContactProperties {
+      softCFM 0.0001
+    }
+  ]
+}
+Viewpoint {
+  orientation -0.14387313973979804 -0.7875041203604167 0.5992810526595839 5.5392575067358045
+  position -19.350400026926174 -2.8540121991102647 27.533460812556864
+  follow "Tractor"
+  followSmoothness 0
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+}
+Solid {
+  children [
+    DEF PLANE_SHAPE Shape {
+      appearance PBRAppearance {
+        baseColorMap ImageTexture {
+          url [
+            "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/default/worlds/textures/dry_grass.jpg"
+          ]
+        }
+        roughness 1
+        metalness 0
+        textureTransform TextureTransform {
+          scale 200 200
+        }
+      }
+      geometry Plane {
+        size 1000 1000
+      }
+      castShadows FALSE
+    }
+  ]
+  boundingObject USE PLANE_SHAPE
+}
+Tractor {
+  hidden linearVelocity_0 2.7602050861676743 -3.0157502024639875e-09 -0.00874296480311262
+  hidden angularVelocity_0 -1.453195654276371e-10 -0.018621449871542583 -1.0823562269428319e-10
+  hidden translation_1 0 0 0
+  hidden rotation_1 -0.9999999793878296 -1.595392277019527e-05 0.0002024100123112052 0.15731442589038466
+  hidden linearVelocity_1 2.7694318843278136 4.877095671411505e-06 0.0028829417952501166
+  hidden angularVelocity_1 -0.00021756403239900417 7.2902870308841665 -0.00019265641740462693
+  hidden translation_2 0 0 0
+  hidden rotation_2 0.9999999793878218 -1.5953925643143103e-05 -0.0002024100497507414 0.15731442512413762
+  hidden linearVelocity_2 2.7694318842814925 -4.8833985846425995e-06 0.002882941892997066
+  hidden angularVelocity_2 0.00021758071212961446 7.290287030853257 0.0001927735081229631
+  hidden translation_3 0 0 0
+  hidden rotation_3 1 0 0 1.1541097025910938
+  hidden linearVelocity_3 2.767782866879114 -8.976213550521722e-07 -0.0035722858686090798
+  hidden angularVelocity_3 3.317717483812039e-06 4.611692896651761 -0.00011270833017250736
+  hidden translation_4 0 0 0
+  hidden rotation_4 -1 0 0 1.1541097020298219
+  hidden linearVelocity_4 2.767782866743025 8.913365016838477e-07 -0.003572285826556497
+  hidden angularVelocity_4 -3.3072993945714057e-06 4.611692896555023 0.00011278230435453411
+  translation 17.31416520822109 -17.80000001262275 0.5148142690420592
+  rotation 8.609524637346896e-08 0.9999999999999963 -8.331022830747795e-09 0.09370925112996051
+  name "Tractor"
+  controller "<extern>"
+  sensorSlot [
+    Camera {
+      translation 1.98899 0 0.973449
+      rotation 0 1 0 -0.1499953071795863
+      children [
+        Transform {
+          translation -0.05 0 0
+          rotation 0 -1 0 1.5708
+          children [
+            Shape {
+              appearance PBRAppearance {
+                roughness 1
+                metalness 0
+              }
+              geometry Cylinder {
+                height 0.1
+                radius 0.04
+              }
+            }
+          ]
+        }
+      ]
+      fieldOfView 1
+      width 128
+    }
+    SickLms291 {
+      translation 2.31169 0 0.574009
+      rotation 0 -1 0 0.140345
+    }
+    GPS {
+    }
+    Gyro {
+    }
+  ]
+}

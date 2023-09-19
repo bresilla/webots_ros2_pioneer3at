@@ -1,0 +1,47 @@
+<?xml version="1.0" ?>
+<robot name="Pioneer3at">
+    <webots>
+        <plugin type="webots_ros2_control::Ros2Control" />
+        <!-- <plugin type="webots_ros2_pioneer3at.clock_sync.ClockSync">
+            <para>value1</para>
+            <mete>value2</mete>
+        </plugin> -->
+        <plugin type="webots_ros2_driver::Ros2IMU">
+            <enabled>true</enabled>
+            <updateRate>20</updateRate>
+            <topicName>/imu</topicName>
+            <alwaysOn>false</alwaysOn>
+            <frameName>base_link</frameName>
+            <inertialUnitName>imu</inertialUnitName>
+            <gyroName>gyro</gyroName>
+            <accelerometerName>accelerometer</accelerometerName>
+        </plugin>
+        <device reference="gps" type="GPS">
+            <ros>
+                <enabled>False</enabled>
+                <topicName>/gps</topicName>
+            </ros>
+        </device>
+    </webots>
+    <ros2_control name="WebotsControl" type="system">
+        <hardware>
+            <plugin>webots_ros2_control::Ros2ControlSystem</plugin>
+        </hardware>
+        <joint name="front left wheel">
+            <state_interface name="position"/>
+            <command_interface name="velocity"/>
+        </joint>
+        <joint name="back left wheel">
+            <state_interface name="position"/>
+            <command_interface name="velocity"/>
+        </joint>
+        <joint name="front right wheel">
+            <state_interface name="position"/>
+            <command_interface name="velocity"/>
+        </joint>
+        <joint name="back right wheel">
+            <state_interface name="position"/>
+            <command_interface name="velocity"/>
+        </joint>
+    </ros2_control>
+</robot>
