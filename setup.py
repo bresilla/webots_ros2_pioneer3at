@@ -18,8 +18,6 @@ data_files.append(('share/' + package_name + '/protos', glob('protos/*.stl')))
 data_files.append(('share/' + package_name + '/worlds', glob('worlds/*')))
 #params
 data_files.append(('share/' + package_name + '/params', glob('params/*')))
-#maps
-data_files.append(('share/' + package_name + '/maps', glob('maps/*')))
 
 setup(
     name=package_name,
