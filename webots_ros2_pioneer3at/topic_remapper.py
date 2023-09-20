@@ -24,34 +24,31 @@ class Remapper(Node):
         self.odom_sub = self.create_subscription(Odometry, '/odom', self.odom_callback, 1)
         self.imu_sub = self.create_subscription(Imu, '/imu', self.imu_callback, 1)
 
-        self.dist_pub = self.create_publisher(Float32Stamped, "/gps/distance", 10)
         self.gps_pub = self.create_publisher(NavSatFix, "/gps/fix", 10)
-        self.srv = self.create_service(Trigger, '/gps/reset_distance', self.reset_distance)
         self.odom_pub = self.create_publisher(Odometry, '/wheel/odometry', 1)
         self.imu_pub = self.create_publisher(Imu, '/imu/data', 1)
 
-        self.prev = None
-        self.dist = 0
+        self.dist_pub = self.create_publisher(Float32Stamped, "/gps/distance", 10)
+        self.srv = self.create_service(Trigger, '/gps/reset_distance', self.reset_distance)
+        self.ifix = None
 
     def imu_callback(self, msg):
         self.imu_pub.publish(msg)
 
     def reset_distance(self, request, response):
-        self.dist = 0
+        self.ifix = None
         return response
 
     def gps_callback(self, msg):
-        latitude = msg.latitude
-        longitude = msg.longitude
-        self.gps_pub.publish(msg)
-        if not math.isnan(latitude) and not math.isnan(longitude):
-            delta = 0 if self.prev is None else distance((self.prev[0], self.prev[1]), (latitude, longitude))
-            self.dist = float(self.dist + delta)
-            self.prev = [latitude, longitude]
-            new_msg = Float32Stamped()
-            new_msg.header = msg.header
-            new_msg.data = self.dist
-            self.dist_pub.publish(new_msg)
+        new_msg = Float32Stamped()
+        new_msg.header = msg.header
+        if self.ifix is None:
+            self.ifix = msg
+            new_msg.data = 0.0
+        else:
+            delta = distance((self.ifix.latitude, self.ifix.longitude), (msg.latitude, msg.longitude))
+            new_msg.data = delta
+        self.dist_pub.publish(new_msg)
 
     def odom_callback(self, msg):
         self.odom_pub.publish(msg)
