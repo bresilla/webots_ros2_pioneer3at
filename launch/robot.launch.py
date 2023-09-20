@@ -95,11 +95,18 @@ def get_ros2_nodes(*args):
         output='screen',
     )
 
+    distance_calc = Node(
+        package='webots_ros2_pioneer3at',
+        executable='distance_calc',
+        name='distance_calc',
+        output='screen',
+    )
+
     reset_distance = ExecuteProcess(
         cmd=[[
             FindExecutable(name='ros2'),
-            " service call ",
-            "/gps/reset_distance ",
+            "service call",
+            "/gps/fix_reset",
             "example_interfaces/srv/Trigger ",
         ]],
         shell=True
@@ -113,6 +120,7 @@ def get_ros2_nodes(*args):
         footprint_publisher,
         imu_publisher,
         topic_remapper,
+        distance_calc,
         reset_distance,
     ]
 
