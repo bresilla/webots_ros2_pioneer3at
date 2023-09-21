@@ -97,7 +97,7 @@ def get_ros2_nodes(*args):
 
     webots_ros2_pioneer3at = Node(
         package='webots_ros2_pioneer3at',
-        executable='webots_ros2_p   ioneer3at',
+        executable='webots_ros2_pioneer3at',
         name='webots_ros2_pioneer3at',
         output='screen',
     )
