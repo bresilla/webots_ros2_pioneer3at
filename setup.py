@@ -34,7 +34,6 @@ setup(
     entry_points={
         'console_scripts': [
             'webots_ros2_pioneer3at = webots_ros2_pioneer3at.webots_ros2_pioneer3at:main',
-            'distance_calc = webots_ros2_pioneer3at.distance_calc:main',
         ],
         'launch.frontend.launch_extension': [
             'launch_ros = launch_ros'

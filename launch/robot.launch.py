@@ -88,13 +88,6 @@ def get_ros2_nodes(*args):
         arguments=['0', '0', '0', '0', '0', '0', 'base_link', 'imu_link'],
     )
 
-    topic_remapper = Node(
-        package='webots_ros2_pioneer3at',
-        executable='topic_remapper',
-        name='topic_remapper',
-        output='screen',
-    )
-
     webots_ros2_pioneer3at = Node(
         package='webots_ros2_pioneer3at',
         executable='webots_ros2_pioneer3at',
@@ -102,22 +95,22 @@ def get_ros2_nodes(*args):
         output='screen',
     )
 
-    distance_calc = Node(
-        package='webots_ros2_pioneer3at',
-        executable='distance_calc',
-        name='distance_calc',
-        output='screen',
-    )
+    # distance_calc = Node(
+    #     package='webots_ros2_pioneer3at',
+    #     executable='distance_calc',
+    #     name='distance_calc',
+    #     output='screen',
+    # )
 
-    fix_set = ExecuteProcess(
-        cmd=[[
-            FindExecutable(name='ros2'),
-            "service call",
-            "/gps/fix_set",
-            "example_interfaces/srv/Trigger ",
-        ]],
-        shell=True
-    )
+    # fix_set = ExecuteProcess(
+    #     cmd=[[
+    #         FindExecutable(name='ros2'),
+    #         "service call",
+    #         "/gps/fix_set",
+    #         "example_interfaces/srv/Trigger ",
+    #     ]],
+    #     shell=True
+    # )
 
     return [
         joint_state_broadcaster_spawner,
@@ -127,8 +120,6 @@ def get_ros2_nodes(*args):
         footprint_publisher,
         imu_publisher,
         webots_ros2_pioneer3at,
-        distance_calc,
-        fix_set,
     ]
 
 
