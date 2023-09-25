@@ -81,6 +81,13 @@ def get_ros2_nodes(*args):
         arguments=['0', '0', '0', '0', '0', '0', 'base_link', 'base_footprint'],
     )
 
+    gps_publisher = Node(
+        package='tf2_ros',
+        executable='static_transform_publisher',
+        output='screen',
+        arguments=['0', '0', '0', '0', '0', '0', 'base_link', 'gps'],
+    )
+
     imu_publisher = Node(
         package='tf2_ros',
         executable='static_transform_publisher',
@@ -117,6 +124,7 @@ def get_ros2_nodes(*args):
         diffdrive_controller_spawner,
         robot_state_publisher,
         robot_driver,
+        gps_publisher,
         footprint_publisher,
         imu_publisher,
         webots_ros2_pioneer3at,
