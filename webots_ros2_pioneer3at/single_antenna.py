@@ -9,8 +9,6 @@ class Remapper(Node):
     def __init__(self, args):
         super().__init__("gps_fix")
         self.gps_sub = self.create_subscription(NavSatFix, '/gps', self.gps_callback, 10)
-        self.gps_back = self.create_subscription(NavSatFix, '/Pioneer3at/gps_back', self.gps_callback, 10)
-        self.gps_front = self.create_subscription(NavSatFix, '/Pioneer3at/gps_front', self.gps_callback, 10)
         self.odom_sub = self.create_subscription(Odometry, '/odom', self.odom_callback, 1)
         self.imu_sub = self.create_subscription(Imu, '/imu', self.imu_callback, 1)
 

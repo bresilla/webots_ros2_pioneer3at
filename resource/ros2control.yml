@@ -12,6 +12,6 @@ diffdrive_controller:
     wheel_separation: 0.4
     wheel_radius: 0.11
     wheels_per_side: 1
-    enable_odom_tf: true
+    enable_odom_tf: false  #change to true to enable odometry tf
     use_stamped_vel: false
     base_frame_id: "base_link"

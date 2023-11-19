@@ -34,6 +34,8 @@ setup(
     entry_points={
         'console_scripts': [
             'webots_ros2_pioneer3at = webots_ros2_pioneer3at.webots_ros2_pioneer3at:main',
+            'single_antenna = webots_ros2_pioneer3at.single_antenna:main',
+            'double_antenna = webots_ros2_pioneer3at.double_antenna:main',
         ],
         'launch.frontend.launch_extension': [
             'launch_ros = launch_ros'
