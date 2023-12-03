@@ -1,0 +1,81 @@
+#VRML_SIM R2023a utf8
+# license: Creative Commons Attribution 4.0 International License.
+# license url: https://creativecommons.org/licenses/by/4.0/legalcode
+# A simple crop
+# template language: javascript
+
+PROTO Crop [
+  field SFVec3f    translation       0 0 0
+  field SFRotation rotation          0 1 0 0
+  field SFVec3f    scale             0.02 0.02 0.02
+  field SFString   name              "crop"
+  field SFColor    color             0 0 0
+  field MFInt32    stripIndices      [0]
+  field SFVec2f    stripSize         10 10
+  field SFVec2f    distance          1 1
+]
+{
+  Solid {
+    translation IS translation
+    rotation IS rotation
+    scale IS scale
+    name IS name
+    children [
+      DEF SIMPLE_PLANT_GROUP Group {
+        children [
+          %< 
+            for (let i of fields.stripIndices.value) { 
+              for (let k = 0; k < Math.round(fields.stripSize.value.y / fields.distance.value.y); k++) { 
+                let x = 0;
+                let y = i * fields.stripSize.value.y / fields.scale.value.y + k * fields.distance.value.y / fields.scale.value.y;
+          >%
+              DEF SIMPLE_PLANT_ROW Group {
+                children [
+                  %<
+                    for (let j = 0; j < Math.round(fields.stripSize.value.x / fields.distance.value.x); j++) { 
+                  >%
+                      Transform {
+                        translation %<= x >% %<= y >% 0
+                        %< let random_rotation = Math.random(1, Math.PI * 2); >%
+                        rotation 0 0 1 %<=random_rotation>%
+                        rotationStep 0.01
+                        children [
+                          Solid {
+                            translation 0 1 0
+                            rotation 0 0 1 0
+                            %< let random_scale = Math.abs(1 - (Math.random(0, 1) * 0.1)) + 0.0001; >%
+                            scale %<=random_scale>% %<=random_scale>% %<=random_scale>%
+                            children [
+                              Shape {
+                                appearance PBRAppearance {
+                                  baseColor IS color
+                                  metalness 0
+                                  IBLStrength 0
+                                  occlusionMapStrength 0
+                                  emissiveIntensity 0
+                                }
+                                geometry Mesh {
+                                  url [ "Plant.stl" ]
+                                }
+                              }
+                            ]
+                            %< let n = fields.name.value; >%
+                            name "%<=n>% (%<=i>%, %<=j>%, %<=k>%)"
+                          }
+                        ]
+                      }
+                    %<
+                        x += fields.distance.value.x / fields.scale.value.x; 
+                      } 
+                    >%
+                  ]
+                }
+          %< 
+          }
+            } 
+          >%
+        ]
+      }
+    ]
+  }
+}

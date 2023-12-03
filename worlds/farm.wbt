@@ -14,13 +14,14 @@ WorldInfo {
     "Pioneer 3AT robot (Adept MobileRobots)."
   ]
   title "Pioneer 3AT"
+  ERP 0.8
   gpsCoordinateSystem "WGS84"
   gpsReference 51.9877 5.66295 0
-  lineScale 0.5
+  lineScale 0.2
 }
 Viewpoint {
-  orientation -0.133984735328464 -0.8246449890749189 0.5495532118845163 5.70342255260979
-  position -29.307108197644013 4.916561277242728 18.025037465999013
+  orientation -0.015148252051167845 0.8467483452464769 -0.5317779332410733 0.7497190701320451
+  position -19.471852455489934 5.157100541831834 14.938534327416384
   followSmoothness 0
 }
 TexturedBackground {
@@ -78,11 +79,10 @@ Pioneer3at {
       maxRange 2
     }
     GPS {
-      translation -0.2 0 0.3
+      translation -0.3 0 0.3
       name "gps_back"
     }
     GPS {
-      translation 0.2 0 0.3
       name "gps_front"
     }
     Compass {
@@ -122,536 +122,551 @@ Pioneer3at {
     }
   ]
 }
-Group {
+Pose {
+  translation 5 -11 0
   children [
     Pose {
-      translation 5 -5 0
       children [
-        Pose {
-          children [
-            Cypress {
-              scale 0.5
-            }
-            Cypress {
-              translation 1 0 0
-              name "cypress tree(1)"
-              scale 0.5
-            }
-            Cypress {
-              translation 2 0 0
-              name "cypress tree(2)"
-              scale 0.5
-            }
-            Cypress {
-              translation 3 0 0
-              name "cypress tree(3)"
-              scale 0.5
-            }
-            Cypress {
-              translation 4 0 0
-              name "cypress tree(4)"
-              scale 0.5
-            }
-            Cypress {
-              translation 5 0 0
-              name "cypress tree(5)"
-              scale 0.5
-            }
-            Cypress {
-              translation 6 0 0
-              name "cypress tree(6)"
-              scale 0.5
-            }
-            Cypress {
-              translation 7 0 0
-              name "cypress tree(7)"
-              scale 0.5
-            }
-            Cypress {
-              translation 8 0 0
-              name "cypress tree(8)"
-              scale 0.5
-            }
-            Cypress {
-              translation 9 0 0
-              name "cypress tree(9)"
-              scale 0.5
-            }
-            Cypress {
-              translation 10 0 0
-              name "cypress tree(10)"
-              scale 0.5
-            }
-            Cypress {
-              translation 11 0 0
-              name "cypress tree(11)"
-              scale 0.5
-            }
-            Cypress {
-              translation 12 0 0
-              name "cypress tree(12)"
-              scale 0.5
-            }
-            Cypress {
-              translation 13 0 0
-              name "cypress tree(13)"
-              scale 0.5
-            }
-            Cypress {
-              translation 14 0 0
-              name "cypress tree(14)"
-              scale 0.5
-            }
-            Cypress {
-              translation 15 0 0
-              name "cypress tree(15)"
-              scale 0.5
-            }
-            Cypress {
-              translation 16 0 0
-              name "cypress tree(16)"
-              scale 0.5
-            }
-            Cypress {
-              translation 17 0 0
-              name "cypress tree(17)"
-              scale 0.5
-            }
-            Cypress {
-              translation 18 0 0
-              name "cypress tree(18)"
-              scale 0.5
-            }
-            Cypress {
-              translation 19 0 0
-              name "cypress tree(19)"
-              scale 0.5
-            }
-          ]
+        Cypress {
+          scale 0.5
         }
-        Pose {
-          translation 0 -2 0
-          children [
-            Cypress {
-              name "cypress tree(2)"
-              scale 0.5
-            }
-            Cypress {
-              translation 1 0 0
-              name "cypress tree(3)"
-              scale 0.5
-            }
-            Cypress {
-              translation 2 0 0
-              name "cypress tree(3)"
-              scale 0.5
-            }
-            Cypress {
-              translation 3 0 0
-              name "cypress tree(3)"
-              scale 0.5
-            }
-            Cypress {
-              translation 4 0 0
-              name "cypress tree(3)"
-              scale 0.5
-            }
-            Cypress {
-              translation 5 0 0
-              name "cypress tree(3)"
-              scale 0.5
-            }
-            Cypress {
-              translation 6 0 0
-              name "cypress tree(3)"
-              scale 0.5
-            }
-            Cypress {
-              translation 7 0 0
-              name "cypress tree(3)"
-              scale 0.5
-            }
-            Cypress {
-              translation 8 0 0
-              name "cypress tree(3)"
-              scale 0.5
-            }
-            Cypress {
-              translation 9 0 0
-              name "cypress tree(3)"
-              scale 0.5
-            }
-            Cypress {
-              translation 10 0 0
-              name "cypress tree(3)"
-              scale 0.5
-            }
-            Cypress {
-              translation 11 0 0
-              name "cypress tree(3)"
-              scale 0.5
-            }
-            Cypress {
-              translation 12 0 0
-              name "cypress tree(3)"
-              scale 0.5
-            }
-            Cypress {
-              translation 13 0 0
-              name "cypress tree(3)"
-              scale 0.5
-            }
-            Cypress {
-              translation 14 0 0
-              name "cypress tree(3)"
-              scale 0.5
-            }
-            Cypress {
-              translation 15 0 0
-              name "cypress tree(3)"
-              scale 0.5
-            }
-            Cypress {
-              translation 16 0 0
-              name "cypress tree(3)"
-              scale 0.5
-            }
-            Cypress {
-              translation 17 0 0
-              name "cypress tree(3)"
-              scale 0.5
-            }
-            Cypress {
-              translation 18 0 0
-              name "cypress tree(3)"
-              scale 0.5
-            }
-            Cypress {
-              translation 19 0 0
-              name "cypress tree(3)"
-              scale 0.5
-            }
-          ]
+        Cypress {
+          translation 1 0 0
+          name "cypress tree(1)"
+          scale 0.5
         }
-        Pose {
-          translation 0 -4 0
-          children [
-            Cypress {
-              name "cypress tree(3)"
-              scale 0.5
-            }
-            Cypress {
-              translation 1 0 0
-              name "cypress tree(3)"
-              scale 0.5
-            }
-            Cypress {
-              translation 2 0 0
-              name "cypress tree(3)"
-              scale 0.5
-            }
-            Cypress {
-              translation 3 0 0
-              name "cypress tree(3)"
-              scale 0.5
-            }
-            Cypress {
-              translation 4 0 0
-              name "cypress tree(3)"
-              scale 0.5
-            }
-            Cypress {
-              translation 5 0 0
-              name "cypress tree(3)"
-              scale 0.5
-            }
-            Cypress {
-              translation 6 0 0
-              name "cypress tree(3)"
-              scale 0.5
-            }
-            Cypress {
-              translation 7 0 0
-              name "cypress tree(3)"
-              scale 0.5
-            }
-            Cypress {
-              translation 8 0 0
-              name "cypress tree(3)"
-              scale 0.5
-            }
-            Cypress {
-              translation 9 0 0
-              name "cypress tree(3)"
-              scale 0.5
-            }
-            Cypress {
-              translation 10 0 0
-              name "cypress tree(3)"
-              scale 0.5
-            }
-            Cypress {
-              translation 11 0 0
-              name "cypress tree(3)"
-              scale 0.5
-            }
-            Cypress {
-              translation 12 0 0
-              name "cypress tree(3)"
-              scale 0.5
-            }
-            Cypress {
-              translation 13 0 0
-              name "cypress tree(3)"
-              scale 0.5
-            }
-            Cypress {
-              translation 14 0 0
-              name "cypress tree(3)"
-              scale 0.5
-            }
-            Cypress {
-              translation 15 0 0
-              name "cypress tree(3)"
-              scale 0.5
-            }
-            Cypress {
-              translation 16 0 0
-              name "cypress tree(3)"
-              scale 0.5
-            }
-            Cypress {
-              translation 17 0 0
-              name "cypress tree(3)"
-              scale 0.5
-            }
-            Cypress {
-              translation 18 0 0
-              name "cypress tree(3)"
-              scale 0.5
-            }
-            Cypress {
-              translation 19 0 0
-              name "cypress tree(3)"
-              scale 0.5
-            }
-          ]
+        Cypress {
+          translation 2 0 0
+          name "cypress tree(2)"
+          scale 0.5
         }
-        Pose {
-          translation 0 -6 0
-          children [
-            Cypress {
-              name "cypress tree(3)"
-              scale 0.5
-            }
-            Cypress {
-              translation 1 0 0
-              name "cypress tree(3)"
-              scale 0.5
-            }
-            Cypress {
-              translation 2 0 0
-              name "cypress tree(3)"
-              scale 0.5
-            }
-            Cypress {
-              translation 3 0 0
-              name "cypress tree(3)"
-              scale 0.5
-            }
-            Cypress {
-              translation 4 0 0
-              name "cypress tree(3)"
-              scale 0.5
-            }
-            Cypress {
-              translation 5 0 0
-              name "cypress tree(3)"
-              scale 0.5
-            }
-            Cypress {
-              translation 6 0 0
-              name "cypress tree(3)"
-              scale 0.5
-            }
-            Cypress {
-              translation 7 0 0
-              name "cypress tree(3)"
-              scale 0.5
-            }
-            Cypress {
-              translation 8 0 0
-              name "cypress tree(3)"
-              scale 0.5
-            }
-            Cypress {
-              translation 9 0 0
-              name "cypress tree(3)"
-              scale 0.5
-            }
-            Cypress {
-              translation 10 0 0
-              name "cypress tree(3)"
-              scale 0.5
-            }
-            Cypress {
-              translation 11 0 0
-              name "cypress tree(3)"
-              scale 0.5
-            }
-            Cypress {
-              translation 12 0 0
-              name "cypress tree(3)"
-              scale 0.5
-            }
-            Cypress {
-              translation 13 0 0
-              name "cypress tree(3)"
-              scale 0.5
-            }
-            Cypress {
-              translation 14 0 0
-              name "cypress tree(3)"
-              scale 0.5
-            }
-            Cypress {
-              translation 15 0 0
-              name "cypress tree(3)"
-              scale 0.5
-            }
-            Cypress {
-              translation 16 0 0
-              name "cypress tree(3)"
-              scale 0.5
-            }
-            Cypress {
-              translation 17 0 0
-              name "cypress tree(3)"
-              scale 0.5
-            }
-            Cypress {
-              translation 18 0 0
-              name "cypress tree(3)"
-              scale 0.5
-            }
-            Cypress {
-              translation 19 0 0
-              name "cypress tree(3)"
-              scale 0.5
-            }
-          ]
+        Cypress {
+          translation 3 0 0
+          name "cypress tree(3)"
+          scale 0.5
         }
-        Pose {
-          translation 0 -8 0
-          children [
-            Cypress {
-              name "cypress tree(3)"
-              scale 0.5
-            }
-            Cypress {
-              translation 1 0 0
-              name "cypress tree(3)"
-              scale 0.5
-            }
-            Cypress {
-              translation 2 0 0
-              name "cypress tree(3)"
-              scale 0.5
-            }
-            Cypress {
-              translation 3 0 0
-              name "cypress tree(3)"
-              scale 0.5
-            }
-            Cypress {
-              translation 4 0 0
-              name "cypress tree(3)"
-              scale 0.5
-            }
-            Cypress {
-              translation 5 0 0
-              name "cypress tree(3)"
-              scale 0.5
-            }
-            Cypress {
-              translation 6 0 0
-              name "cypress tree(3)"
-              scale 0.5
-            }
-            Cypress {
-              translation 7 0 0
-              name "cypress tree(3)"
-              scale 0.5
-            }
-            Cypress {
-              translation 8 0 0
-              name "cypress tree(3)"
-              scale 0.5
-            }
-            Cypress {
-              translation 9 0 0
-              name "cypress tree(3)"
-              scale 0.5
-            }
-            Cypress {
-              translation 10 0 0
-              name "cypress tree(3)"
-              scale 0.5
-            }
-            Cypress {
-              translation 11 0 0
-              name "cypress tree(3)"
-              scale 0.5
-            }
-            Cypress {
-              translation 12 0 0
-              name "cypress tree(3)"
-              scale 0.5
-            }
-            Cypress {
-              translation 13 0 0
-              name "cypress tree(3)"
-              scale 0.5
-            }
-            Cypress {
-              translation 14 0 0
-              name "cypress tree(3)"
-              scale 0.5
-            }
-            Cypress {
-              translation 15 0 0
-              name "cypress tree(3)"
-              scale 0.5
-            }
-            Cypress {
-              translation 16 0 0
-              name "cypress tree(3)"
-              scale 0.5
-            }
-            Cypress {
-              translation 17 0 0
-              name "cypress tree(3)"
-              scale 0.5
-            }
-            Cypress {
-              translation 18 0 0
-              name "cypress tree(3)"
-              scale 0.5
-            }
-            Cypress {
-              translation 19 0 0
-              name "cypress tree(3)"
-              scale 0.5
-            }
-          ]
+        Cypress {
+          translation 4 0 0
+          name "cypress tree(4)"
+          scale 0.5
         }
-        Floor {
-          translation 10 -5 0.01
-          size 20 10
-          appearance Grass {
-          }
+        Cypress {
+          translation 5 0 0
+          name "cypress tree(5)"
+          scale 0.5
+        }
+        Cypress {
+          translation 6 0 0
+          name "cypress tree(6)"
+          scale 0.5
+        }
+        Cypress {
+          translation 7 0 0
+          name "cypress tree(7)"
+          scale 0.5
+        }
+        Cypress {
+          translation 8 0 0
+          name "cypress tree(8)"
+          scale 0.5
+        }
+        Cypress {
+          translation 9 0 0
+          name "cypress tree(9)"
+          scale 0.5
+        }
+        Cypress {
+          translation 10 0 0
+          name "cypress tree(10)"
+          scale 0.5
+        }
+        Cypress {
+          translation 11 0 0
+          name "cypress tree(11)"
+          scale 0.5
+        }
+        Cypress {
+          translation 12 0 0
+          name "cypress tree(12)"
+          scale 0.5
+        }
+        Cypress {
+          translation 13 0 0
+          name "cypress tree(13)"
+          scale 0.5
+        }
+        Cypress {
+          translation 14 0 0
+          name "cypress tree(14)"
+          scale 0.5
+        }
+        Cypress {
+          translation 15 0 0
+          name "cypress tree(15)"
+          scale 0.5
+        }
+        Cypress {
+          translation 16 0 0
+          name "cypress tree(16)"
+          scale 0.5
+        }
+        Cypress {
+          translation 17 0 0
+          name "cypress tree(17)"
+          scale 0.5
+        }
+        Cypress {
+          translation 18 0 0
+          name "cypress tree(18)"
+          scale 0.5
+        }
+        Cypress {
+          translation 19 0 0
+          name "cypress tree(19)"
+          scale 0.5
         }
       ]
     }
+    Pose {
+      translation 0 -2 0
+      children [
+        Cypress {
+          name "cypress tree(2)"
+          scale 0.5
+        }
+        Cypress {
+          translation 1 0 0
+          name "cypress tree(3)"
+          scale 0.5
+        }
+        Cypress {
+          translation 2 0 0
+          name "cypress tree(3)"
+          scale 0.5
+        }
+        Cypress {
+          translation 3 0 0
+          name "cypress tree(3)"
+          scale 0.5
+        }
+        Cypress {
+          translation 4 0 0
+          name "cypress tree(3)"
+          scale 0.5
+        }
+        Cypress {
+          translation 5 0 0
+          name "cypress tree(3)"
+          scale 0.5
+        }
+        Cypress {
+          translation 6 0 0
+          name "cypress tree(3)"
+          scale 0.5
+        }
+        Cypress {
+          translation 7 0 0
+          name "cypress tree(3)"
+          scale 0.5
+        }
+        Cypress {
+          translation 8 0 0
+          name "cypress tree(3)"
+          scale 0.5
+        }
+        Cypress {
+          translation 9 0 0
+          name "cypress tree(3)"
+          scale 0.5
+        }
+        Cypress {
+          translation 10 0 0
+          name "cypress tree(3)"
+          scale 0.5
+        }
+        Cypress {
+          translation 11 0 0
+          name "cypress tree(3)"
+          scale 0.5
+        }
+        Cypress {
+          translation 12 0 0
+          name "cypress tree(3)"
+          scale 0.5
+        }
+        Cypress {
+          translation 13 0 0
+          name "cypress tree(3)"
+          scale 0.5
+        }
+        Cypress {
+          translation 14 0 0
+          name "cypress tree(3)"
+          scale 0.5
+        }
+        Cypress {
+          translation 15 0 0
+          name "cypress tree(3)"
+          scale 0.5
+        }
+        Cypress {
+          translation 16 0 0
+          name "cypress tree(3)"
+          scale 0.5
+        }
+        Cypress {
+          translation 17 0 0
+          name "cypress tree(3)"
+          scale 0.5
+        }
+        Cypress {
+          translation 18 0 0
+          name "cypress tree(3)"
+          scale 0.5
+        }
+        Cypress {
+          translation 19 0 0
+          name "cypress tree(3)"
+          scale 0.5
+        }
+      ]
+    }
+    Pose {
+      translation 0 -4 0
+      children [
+        Cypress {
+          name "cypress tree(3)"
+          scale 0.5
+        }
+        Cypress {
+          translation 1 0 0
+          name "cypress tree(3)"
+          scale 0.5
+        }
+        Cypress {
+          translation 2 0 0
+          name "cypress tree(3)"
+          scale 0.5
+        }
+        Cypress {
+          translation 3 0 0
+          name "cypress tree(3)"
+          scale 0.5
+        }
+        Cypress {
+          translation 4 0 0
+          name "cypress tree(3)"
+          scale 0.5
+        }
+        Cypress {
+          translation 5 0 0
+          name "cypress tree(3)"
+          scale 0.5
+        }
+        Cypress {
+          translation 6 0 0
+          name "cypress tree(3)"
+          scale 0.5
+        }
+        Cypress {
+          translation 7 0 0
+          name "cypress tree(3)"
+          scale 0.5
+        }
+        Cypress {
+          translation 8 0 0
+          name "cypress tree(3)"
+          scale 0.5
+        }
+        Cypress {
+          translation 9 0 0
+          name "cypress tree(3)"
+          scale 0.5
+        }
+        Cypress {
+          translation 10 0 0
+          name "cypress tree(3)"
+          scale 0.5
+        }
+        Cypress {
+          translation 11 0 0
+          name "cypress tree(3)"
+          scale 0.5
+        }
+        Cypress {
+          translation 12 0 0
+          name "cypress tree(3)"
+          scale 0.5
+        }
+        Cypress {
+          translation 13 0 0
+          name "cypress tree(3)"
+          scale 0.5
+        }
+        Cypress {
+          translation 14 0 0
+          name "cypress tree(3)"
+          scale 0.5
+        }
+        Cypress {
+          translation 15 0 0
+          name "cypress tree(3)"
+          scale 0.5
+        }
+        Cypress {
+          translation 16 0 0
+          name "cypress tree(3)"
+          scale 0.5
+        }
+        Cypress {
+          translation 17 0 0
+          name "cypress tree(3)"
+          scale 0.5
+        }
+        Cypress {
+          translation 18 0 0
+          name "cypress tree(3)"
+          scale 0.5
+        }
+        Cypress {
+          translation 19 0 0
+          name "cypress tree(3)"
+          scale 0.5
+        }
+      ]
+    }
+    Pose {
+      translation 0 -6 0
+      children [
+        Cypress {
+          name "cypress tree(3)"
+          scale 0.5
+        }
+        Cypress {
+          translation 1 0 0
+          name "cypress tree(3)"
+          scale 0.5
+        }
+        Cypress {
+          translation 2 0 0
+          name "cypress tree(3)"
+          scale 0.5
+        }
+        Cypress {
+          translation 3 0 0
+          name "cypress tree(3)"
+          scale 0.5
+        }
+        Cypress {
+          translation 4 0 0
+          name "cypress tree(3)"
+          scale 0.5
+        }
+        Cypress {
+          translation 5 0 0
+          name "cypress tree(3)"
+          scale 0.5
+        }
+        Cypress {
+          translation 6 0 0
+          name "cypress tree(3)"
+          scale 0.5
+        }
+        Cypress {
+          translation 7 0 0
+          name "cypress tree(3)"
+          scale 0.5
+        }
+        Cypress {
+          translation 8 0 0
+          name "cypress tree(3)"
+          scale 0.5
+        }
+        Cypress {
+          translation 9 0 0
+          name "cypress tree(3)"
+          scale 0.5
+        }
+        Cypress {
+          translation 10 0 0
+          name "cypress tree(3)"
+          scale 0.5
+        }
+        Cypress {
+          translation 11 0 0
+          name "cypress tree(3)"
+          scale 0.5
+        }
+        Cypress {
+          translation 12 0 0
+          name "cypress tree(3)"
+          scale 0.5
+        }
+        Cypress {
+          translation 13 0 0
+          name "cypress tree(3)"
+          scale 0.5
+        }
+        Cypress {
+          translation 14 0 0
+          name "cypress tree(3)"
+          scale 0.5
+        }
+        Cypress {
+          translation 15 0 0
+          name "cypress tree(3)"
+          scale 0.5
+        }
+        Cypress {
+          translation 16 0 0
+          name "cypress tree(3)"
+          scale 0.5
+        }
+        Cypress {
+          translation 17 0 0
+          name "cypress tree(3)"
+          scale 0.5
+        }
+        Cypress {
+          translation 18 0 0
+          name "cypress tree(3)"
+          scale 0.5
+        }
+        Cypress {
+          translation 19 0 0
+          name "cypress tree(3)"
+          scale 0.5
+        }
+      ]
+    }
+    Pose {
+      translation 0 -8 0
+      children [
+        Cypress {
+          name "cypress tree(3)"
+          scale 0.5
+        }
+        Cypress {
+          translation 1 0 0
+          name "cypress tree(3)"
+          scale 0.5
+        }
+        Cypress {
+          translation 2 0 0
+          name "cypress tree(3)"
+          scale 0.5
+        }
+        Cypress {
+          translation 3 0 0
+          name "cypress tree(3)"
+          scale 0.5
+        }
+        Cypress {
+          translation 4 0 0
+          name "cypress tree(3)"
+          scale 0.5
+        }
+        Cypress {
+          translation 5 0 0
+          name "cypress tree(3)"
+          scale 0.5
+        }
+        Cypress {
+          translation 6 0 0
+          name "cypress tree(3)"
+          scale 0.5
+        }
+        Cypress {
+          translation 7 0 0
+          name "cypress tree(3)"
+          scale 0.5
+        }
+        Cypress {
+          translation 8 0 0
+          name "cypress tree(3)"
+          scale 0.5
+        }
+        Cypress {
+          translation 9 0 0
+          name "cypress tree(3)"
+          scale 0.5
+        }
+        Cypress {
+          translation 10 0 0
+          name "cypress tree(3)"
+          scale 0.5
+        }
+        Cypress {
+          translation 11 0 0
+          name "cypress tree(3)"
+          scale 0.5
+        }
+        Cypress {
+          translation 12 0 0
+          name "cypress tree(3)"
+          scale 0.5
+        }
+        Cypress {
+          translation 13 0 0
+          name "cypress tree(3)"
+          scale 0.5
+        }
+        Cypress {
+          translation 14 0 0
+          name "cypress tree(3)"
+          scale 0.5
+        }
+        Cypress {
+          translation 15 0 0
+          name "cypress tree(3)"
+          scale 0.5
+        }
+        Cypress {
+          translation 16 0 0
+          name "cypress tree(3)"
+          scale 0.5
+        }
+        Cypress {
+          translation 17 0 0
+          name "cypress tree(3)"
+          scale 0.5
+        }
+        Cypress {
+          translation 18 0 0
+          name "cypress tree(3)"
+          scale 0.5
+        }
+        Cypress {
+          translation 19 0 0
+          name "cypress tree(3)"
+          scale 0.5
+        }
+      ]
+    }
+    Floor {
+      translation 10 -5 0.01
+      size 20 10
+      appearance Grass {
+      }
+    }
+  ]
+}
+
+DEF box Solid {
+  translation 3 3 0.1
+  children [
+    Shape {
+      appearance Appearance {
+        material Material {
+          diffuseColor 1 0 1
+        }
+      }
+      geometry Box {
+        size 0.2 0.2 0.2
+      }
+    }
+  ]
+  recognitionColors [
+    1 0 1
   ]
 }

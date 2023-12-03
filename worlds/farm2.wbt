@@ -1,0 +1,121 @@
+#VRML_SIM R2023a utf8
+
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/backgrounds/protos/TexturedBackground.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/backgrounds/protos/TexturedBackgroundLight.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/floors/protos/RectangleArena.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/appearances/protos/SandyGround.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/obstacles/protos/OilBarrel.proto"
+EXTERNPROTO "../protos/Crop.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/robots/adept/pioneer3/protos/Pioneer3at.proto"
+
+WorldInfo {
+  info [
+    "Pioneer 3AT robot (Adept MobileRobots)."
+  ]
+  title "Pioneer 3AT"
+  gpsCoordinateSystem "WGS84"
+  gpsReference 51.9877 5.66295 0
+  lineScale 0.5
+}
+Viewpoint {
+  orientation 0.06034627058223699 -0.991819229914036 0.11248530037095518 5.793533547317347
+  position -3.7613177910048115 0.12637179538360965 3.4219050604493453
+  followSmoothness 0
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+}
+RectangleArena {
+  name "Field"
+  floorSize 30 30
+  floorTileSize 5 5
+  floorAppearance SandyGround {
+    colorOverride 0.792157 0.792157 0.552941
+  }
+  wallThickness 0.2
+  wallHeight 0.8
+  wallAppearance PBRAppearance {
+    baseColorMap ImageTexture {
+      url [
+        "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/default/worlds/textures/gray_brick_wall.jpg"
+      ]
+    }
+    roughness 1
+    metalness 0
+    textureTransform TextureTransform {
+      scale 56 28
+    }
+  }
+}
+Crop {
+  name "Potato"
+  translation 1 2.4 0
+  color 0.9373 0.9176 0.7098
+  scale 0.03 0.03 0.03
+  stripIndices [0, 10.5]
+  stripSize 5 0.25
+  distance 0.5 0.05
+}
+Crop {
+  name "Maize"
+  translation 1 2.4 0
+  color 0.9843 0.9255 0.3647
+  scale 0.03 0.03 0.03
+  stripIndices [3.5, 14]
+  stripSize 5 0.25
+  distance 0.5 0.05
+}
+Crop {
+  name "Sugarbeet"
+  translation 1 2.4 0
+  color 0.5137 0.2588 0.3255
+  scale 0.03 0.03 0.03
+  stripIndices [7]
+  stripSize 5 0.25
+  distance 0.5 0.05
+}
+OilBarrel {
+  name "Obstacle"
+  translation 4 2.2 0
+  height 0.4
+  radius 0.27
+}
+Pioneer3at {
+  translation 0 0 0
+  name "Pioneer3at"
+  controller "<extern>"
+  supervisor TRUE
+  extensionSlot [
+    Compass {
+    }
+    Camera {
+      translation 0.115 0 0.735071
+      rotation 0 -1 0 -1.0472053071795866
+      name "camera_front"
+      width 1280
+      height 720
+    }
+    Camera {
+      translation -0.175 3.99604e-07 0.735067
+      rotation 0.5000001748437495 -6.072562123498319e-07 -0.8660253028381163 -3.1415853071795863
+      name "camera_back"
+      width 1280
+      height 720
+    }
+    InertialUnit {
+      translation 0 0 0.3
+      name "imu"
+    }
+    Gyro {
+    }
+    Accelerometer {
+    }
+    Lidar {
+      translation 0 0 0.3
+    }
+    GPS {
+      translation 0 0 0.3
+    }
+  ]
+}

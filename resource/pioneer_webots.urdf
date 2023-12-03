@@ -2,10 +2,12 @@
 <robot name="Pioneer3at">
     <webots>
         <plugin type="webots_ros2_control::Ros2Control" />
-        <!-- <plugin type="webots_ros2_pioneer3at.clock_sync.ClockSync">
+        <!-- <plugin type="webots_ros2_pioneer3at.plugin_example.PluginExample">
             <para>value1</para>
-            <mete>value2</mete>
         </plugin> -->
+        <plugin type="webots_plugins.absolute_values.SimDirect">
+            <author>bresilla</author>
+        </plugin>
         <plugin type="webots_ros2_driver::Ros2IMU">
             <enabled>true</enabled>
             <updateRate>20</updateRate>

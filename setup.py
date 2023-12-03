@@ -3,6 +3,7 @@ from setuptools import setup
 import os
 
 package_name = 'webots_ros2_pioneer3at'
+webots_plugins = 'webots_plugins'
 
 data_files = []
 #resources
@@ -22,7 +23,7 @@ data_files.append(('share/' + package_name + '/params', glob('params/*')))
 setup(
     name=package_name,
     version='0.0.0',
-    packages=[package_name],
+    packages=[package_name, webots_plugins],
     data_files=data_files,
     install_requires=['setuptools'],
     zip_safe=True,

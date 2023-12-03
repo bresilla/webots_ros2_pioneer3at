@@ -8,6 +8,9 @@ from example_interfaces.srv import Trigger
 class Remapper(Node):
     def __init__(self, args):
         super().__init__("gps_fix")
+        self.get_logger().info('-----------------------------')
+        self.get_logger().info('STARTING SINGLE ANTENNA MODE')
+        self.get_logger().info('-----------------------------')
         self.gps_sub = self.create_subscription(NavSatFix, '/gps', self.gps_callback, 10)
         self.odom_sub = self.create_subscription(Odometry, '/odom', self.odom_callback, 1)
         self.imu_sub = self.create_subscription(Imu, '/imu', self.imu_callback, 1)

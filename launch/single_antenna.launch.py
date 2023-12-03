@@ -107,24 +107,7 @@ def get_ros2_nodes(*args):
         executable='single_antenna',
         name='single_antenna',
         output='screen',
-    ),
-
-    # distance_calc = Node(
-    #     package='webots_ros2_pioneer3at',
-    #     executable='distance_calc',
-    #     name='distance_calc',
-    #     output='screen',
-    # )
-
-    # fix_set = ExecuteProcess(
-    #     cmd=[[
-    #         FindExecutable(name='ros2'),
-    #         "service call",
-    #         "/gps/fix_set",
-    #         "example_interfaces/srv/Trigger ",
-    #     ]],
-    #     shell=True
-    # )
+    )
 
     return [
         joint_state_broadcaster_spawner,

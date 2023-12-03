@@ -12,8 +12,11 @@ import launch
 from ament_index_python.packages import get_package_share_directory
 from webots_ros2_driver.webots_launcher import WebotsLauncher
 from webots_ros2_driver.utils import controller_url_prefix
+from launch.conditions import IfCondition, UnlessCondition
+
 
 def get_ros2_nodes(*args):
+    antena_arg = DeclareLaunchArgument('double_antenna', default_value='True', description='if true, use single antena')
     package_dir = get_package_share_directory('webots_ros2_pioneer3at')
     robot_description = pathlib.Path(os.path.join(package_dir, 'resource', 'pioneer_webots.urdf')).read_text()
     ros2_control_params = os.path.join(package_dir, 'resource', 'ros2control.yml')
@@ -102,24 +105,24 @@ def get_ros2_nodes(*args):
         output='screen',
     )
 
-    # distance_calc = Node(
-    #     package='webots_ros2_pioneer3at',
-    #     executable='distance_calc',
-    #     name='distance_calc',
-    #     output='screen',
-    # )
+    double_antenna = Node(
+        condition = IfCondition(LaunchConfiguration('double_antenna')),
+        package='webots_ros2_pioneer3at',
+        executable='double_antenna',
+        name='double_antenna',
+        output='screen',
+    )
 
-    # fix_set = ExecuteProcess(
-    #     cmd=[[
-    #         FindExecutable(name='ros2'),
-    #         "service call",
-    #         "/gps/fix_set",
-    #         "example_interfaces/srv/Trigger ",
-    #     ]],
-    #     shell=True
-    # )
+    single_antenna = Node(
+        condition = UnlessCondition(LaunchConfiguration('double_antenna')),
+        package='webots_ros2_pioneer3at',
+        executable='single_antenna',
+        name='single_antenna',
+        output='screen',
+    )
 
     return [
+        antena_arg,
         joint_state_broadcaster_spawner,
         diffdrive_controller_spawner,
         robot_state_publisher,
@@ -127,7 +130,8 @@ def get_ros2_nodes(*args):
         gps_publisher,
         footprint_publisher,
         imu_publisher,
-        webots_ros2_pioneer3at,
+        single_antenna,
+        double_antenna,
     ]
 
 
