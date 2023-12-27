@@ -8,6 +8,7 @@ EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/project
 EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/floors/protos/Floor.proto"
 EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/appearances/protos/Grass.proto"
 EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/trees/protos/Cypress.proto"
+EXTERNPROTO "../protos/Crop.proto"
 
 WorldInfo {
   info [
@@ -20,8 +21,8 @@ WorldInfo {
   lineScale 0.2
 }
 Viewpoint {
-  orientation -0.015148252051167845 0.8467483452464769 -0.5317779332410733 0.7497190701320451
-  position -19.471852455489934 5.157100541831834 14.938534327416384
+  orientation -0.5773502691896258 0.5773502691896258 0.5773502691896258 2.0944
+  position 8.98073732146457 -5.026037254139659 35.98125025741326
   followSmoothness 0
 }
 TexturedBackground {
@@ -50,6 +51,7 @@ RectangleArena {
   }
 }
 Pioneer3at {
+  translation 0.5 0 0
   name "Pioneer3at"
   controller "<extern>"
   supervisor TRUE
@@ -94,10 +96,24 @@ Pioneer3at {
       width 1280
       height 720
     }
+    RangeFinder {
+      translation 0.115 0 0.735071
+      rotation 0 -1 0 -1.0472053071795866
+      name "range_front"
+      width 1280
+      height 720
+    }
     Camera {
       translation -0.175 3.99604e-07 0.735067
       rotation 0.5000001748437495 -6.072562123498319e-07 -0.8660253028381163 -3.1415853071795863
       name "camera_back"
+      width 1280
+      height 720
+    }
+    RangeFinder {
+      translation -0.175 3.99604e-07 0.735067
+      rotation 0.5000001748437495 -6.072562123498319e-07 -0.8660253028381163 -3.1415853071795863
+      name "range_back"
       width 1280
       height 720
     }
@@ -651,7 +667,6 @@ Pose {
     }
   ]
 }
-
 DEF box Solid {
   translation 3 3 0.1
   children [
@@ -669,4 +684,13 @@ DEF box Solid {
   recognitionColors [
     1 0 1
   ]
+}
+Crop {
+  translation 1 0.3 0
+  nRows 6
+  nCols 64
+  nScale 1.2
+  distance 8 10 0
+  uniformity 4
+  missing 2
 }
