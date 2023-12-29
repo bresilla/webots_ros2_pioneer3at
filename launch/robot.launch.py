@@ -40,6 +40,13 @@ def get_ros2_nodes(*args):
         arguments=['0', '0', '0', '0', '0', '0', 'base_link', 'base_footprint'],
     )
 
+    gps_publisher = Node(
+        package='tf2_ros',
+        executable='static_transform_publisher',
+        output='screen',
+        arguments=['0', '0', '0', '0', '0', '0', 'base_link', 'gps'],
+    )
+
     # diff drive controller and joint state broadcaster spawners
     diffdrive_controller_spawner = Node(
         package='controller_manager',
@@ -113,6 +120,7 @@ def get_ros2_nodes(*args):
         webots._supervisor,
         robot_state_publisher,
         footprint_publisher,
+        # gps_publisher,
         joint_state_broadcaster_spawner,
         diffdrive_controller_spawner,
         robot_driver,

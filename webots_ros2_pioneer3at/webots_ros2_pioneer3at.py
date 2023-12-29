@@ -14,21 +14,18 @@ class Remapper(Node):
         self.odom_sub = self.create_subscription(Odometry, '/odom', self.odom_callback, 1)
         self.imu_sub = self.create_subscription(Imu, '/imu', self.imu_callback, 1)
 
-        self.gps_pub = self.create_publisher(NavSatFix, "/gps/fix", 10)
-        self.fix_pub = self.create_publisher(NavSatFix, "/fix", 10)
         self.odom_pub = self.create_publisher(Odometry, '/wheel/odometry', 1)
         self.imu_pub = self.create_publisher(Imu, '/imu/data', 1)
-        self.fix_front = self.create_publisher(NavSatFix, "/gps/front", 10)
-        self.fix_back = self.create_publisher(NavSatFix, "/gps/back", 10)
+        self.gps_main = self.create_publisher(NavSatFix, "/gps_main", 10)
+        self.gps_aux = self.create_publisher(NavSatFix, "/gps_aux", 10)
 
     def front_callback(self, msg):
-        new_msg = msg
-        self.fix_front.publish(msg)
-        self.fix_pub.publish(msg)
-        self.gps_pub.publish(msg)
+        msg.header.frame_id = "gps"
+        self.gps_main.publish(msg)
     
     def back_callback(self, msg):
-        self.fix_back.publish(msg)
+        msg.header.frame_id = "gps_aux"
+        self.gps_aux.publish(msg)
 
     def imu_callback(self, msg):
         self.imu_pub.publish(msg)

@@ -17,7 +17,7 @@ WorldInfo {
   title "Pioneer 3AT"
   ERP 0.8
   gpsCoordinateSystem "WGS84"
-  gpsReference 51.9877 5.66295 0
+  gpsReference 52.5354 5.56082 0
   lineScale 0.2
 }
 Viewpoint {
