@@ -1,0 +1,6 @@
+<?xml version="1.0" ?>
+<robot name="Pioneer3at">
+    <webots>
+        <plugin type="webots_ros2_pioneer3at.pioneer3at_driver.Pioneer3atDriver" />
+    </webots>
+</robot>
